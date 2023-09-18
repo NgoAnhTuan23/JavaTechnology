@@ -1,5 +1,4 @@
 import vn.tdtu.edu.*;
-
 public class program {
     public static void main(String[] args) {
         int[] a, b, c;
