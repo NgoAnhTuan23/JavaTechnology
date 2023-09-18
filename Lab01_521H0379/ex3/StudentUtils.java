@@ -28,11 +28,11 @@ public class StudentUtils {
      * @TODO Chuyển đổi cách viết sử dụng new Comparator... sang sử dụng Lambda Expression
      */
     public static void sortByName(List<Student> list) {
-        Collections.sort(list, new Comparator<Student>() {  //  <--- thay đổi bằng lambda expression
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.name.compareTo(o2.name);
-            }
+        list.sort(new Comparator<Student>() {  //  <--- thay đổi bằng lambda expression
+	        @Override
+	        public int compare(Student o1, Student o2) {
+				return o1.name.compareTo(o2.name);
+	        }
         });
     }
 
@@ -40,13 +40,13 @@ public class StudentUtils {
      * @TODO Chuyển đổi cách viết sử dụng new Comparator... sang sử dụng Lambda Expression
      */
     public static void sortByAvg(List<Student> list) {
-        Collections.sort(list, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                if (o1.average() > o2.average()) return 1;
-                else if (o1.average() < o2.average()) return -1;
-                return 0;
-            }
+        list.sort(new Comparator<Student>() {
+	        @Override
+	        public int compare(Student o1, Student o2) {
+		        if (o1.average() > o2.average()) return 1;
+		        else if (o1.average() < o2.average()) return -1;
+		        return 0;
+	        }
         });
     }
 
@@ -55,28 +55,26 @@ public class StudentUtils {
      * Gọi phương thức này trong main() để sắp xếp và in ra kết quả
      */
     public static void sortByAgeDescending(List<Student> list) {
-        Collections.sort(list, new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                if(o1.age > o2.age) return -1;
-                else if (o1.age < o2.age) return 1;
-                return 0;
-            }
+        list.sort(new Comparator<Student>() {
+	        @Override
+	        public int compare(Student o1, Student o2) {
+		        if (o1.age > o2.age) return -1;
+		        else if (o1.age < o2.age) return 1;
+		        return 0;
+	        }
         });
     }
 
     /**
      * @TODO Sử dụng Stream API và map để tính điểm trung bình của toàn bộ sinh viên trong danh sách
      */
-    public static double avg(List<Student> list) {
-
-        return 0;
+    public static List<Double> avg(List<Student> list) {
+	    return list.stream().map(Student::average).collect(Collectors.toList());
     }
-
     /**
      * @TODO Sử dụng Stream API và filter, map để lấy danh sách TÊN của các học sinh giỏi
      */
     public static List<String> goodStudentName(List<Student> list) {
-        return null;
+	    return list.stream().filter(Student::isGoodStudent).map(i -> i.name).collect(Collectors.toList());
     }
 }

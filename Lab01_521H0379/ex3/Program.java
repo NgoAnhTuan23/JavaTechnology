@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Program {
     public static void main(String[] args) {
@@ -20,9 +19,13 @@ public class Program {
         StudentUtils.print(list);
 
         // @TODO: tính điểm trung bình của toàn bộ danh sách rồi in kết quả
-        List<String> nameAndAvg = list.stream().map(i -> "Avg: " + i.average()).collect(Collectors.toList());
-        nameAndAvg.forEach(System.out::println);
+        System.out.println("============ List Avg ============");
+        System.out.println(StudentUtils.avg(list));
+        System.out.println("============ END ============");
 
         // @TODO: lấy danh sách TÊN học sinh giỏi rồi in kết quả
+        System.out.println("============ List Good Students ============");
+        System.out.println(StudentUtils.goodStudentName(list));
+        System.out.println("============ END ============");
     }
 }
