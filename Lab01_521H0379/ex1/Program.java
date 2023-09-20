@@ -1,4 +1,4 @@
-public class Programs {
+public class Program {
     public static void main(String[] args) {
         String operators = "+ - x / ^";
         if (args.length != 3) {

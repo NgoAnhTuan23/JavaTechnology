@@ -1,6 +1,8 @@
 import java.util.List;
+
 public class Program {
     public static void main(String[] args) {
+        
         // 1. khởi tạo danh sách sinh viên
         List<Student> list = StudentUtils.generate();
         StudentUtils.print(list);
@@ -12,6 +14,7 @@ public class Program {
         // 3. sắp xếp tăng dần theo điểm trung bình và in ra kết quả
         StudentUtils.sortByAvg(list);
         StudentUtils.print(list);
+
 
         // @TODO: sắp xếp giảm dần theo tuổi rồi in kết quả
         StudentUtils.sortByAgeDescending(list);
