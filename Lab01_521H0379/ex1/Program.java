@@ -1,3 +1,5 @@
+// javac Program.java  (compile)
+// java Program 5 + 6  (run)
 public class Program {
     public static void main(String[] args) {
         String operators = "+ - x / ^";

@@ -1,3 +1,5 @@
+// javac Program.java  (compile)
+// java Program        (run)
 import java.util.List;
 
 public class Program {

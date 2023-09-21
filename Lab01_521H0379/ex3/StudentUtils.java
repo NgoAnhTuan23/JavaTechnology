@@ -1,7 +1,5 @@
 import java.util.*;
 import java.util.stream.Collectors;
-
-
 public class StudentUtils {
     
     public static List<Student> generate()
@@ -15,7 +13,6 @@ public class StudentUtils {
         list.add(new Student("Tu", 29, 6.5, 7.7, 8.4));
         list.add(new Student("Diem", 22, 8, 8.3, 6.9));
         list.add(new Student("Linh", 21, 5, 6.6, 7.7));
-        
 
         return list;
     }
@@ -46,7 +43,7 @@ public class StudentUtils {
      */
     public static void sortByAvg(List<Student> list)
     {
-        Collections.sort(list, new Comparator<Student>() {
+        list.sort(compare(o1, o2) {
             @Override
             public int compare(Student o1, Student o2) {
                 if (o1.average() > o2.average()) return 1;
@@ -80,7 +77,6 @@ public class StudentUtils {
     public static List<Double> avg(List<Student> list)
     {
         return list.stream().map(Student::average).collect(Collectors.toList());
-
     }
 
     /**

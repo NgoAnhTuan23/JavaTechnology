@@ -1,3 +1,5 @@
+// javac -cp ".;./lib.jar" Program.java  (compile)
+// java -cp ".;./lib.jar" Program        (run)
 import vn.tdtu.edu.*;
 public class Program {
     public static void main(String[] args) {
