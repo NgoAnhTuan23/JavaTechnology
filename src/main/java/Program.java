@@ -45,8 +45,8 @@ public class Program {
         List<Phone> allPhones = phoneDAO.getAll();
         List<Manufacture> allManufacturers = manufactureDAO.getAll();
         System.out.println("==========  All Phones (only name): ==========");
+        int i = 1;
         for (Phone phone : allPhones) {
-            int i = 1;
             System.out.print(i + ". ");
             System.out.println(phone.getName());
             ++i;
@@ -54,8 +54,8 @@ public class Program {
 
         System.out.println("==============================================");
         System.out.println("======== All Manufacturers (only name): ======");
+        i = 1;
         for (Manufacture manufacturer : allManufacturers) {
-            int i = 1;
             System.out.print(i + ". ");
             System.out.println(manufacturer.getName());
             ++i;
@@ -71,23 +71,6 @@ public class Program {
 
         // Xóa một nhà sản xuất
         manufactureDAO.remove(retrievedManufacturer);
-
-        System.out.println("==== All Phones after remove (only name): ====");
-        for (Phone phone : allPhones) {
-            int i = 1;
-            System.out.print(i + ". ");
-            System.out.println(phone.getName());
-            ++i;
-        }
-
-        System.out.println("=================================================");
-        System.out.println("== All Manufacturers after remove (only name): ==");
-        for (Manufacture manufacturer : allManufacturers) {
-            int i = 1;
-            System.out.print(i + ". ");
-            System.out.println(manufacturer.getName());
-            ++i;
-        }
 
         // Đóng SessionFactory khi bạn đã hoàn thành
         HibernateUtil.sessionFactory.close();
